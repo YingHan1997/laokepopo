@@ -1,0 +1,22 @@
+<view class='myhome'>
+  <view class='top'>
+    <image src='{{head}}'></image>
+    <view><text>{{name}}</text></view>
+  </view>
+  <view class='items'>
+    <template is="item" wx:for="{{myitem}}" wx:key="index" data="{{...myitem[index]}}"></template>
+  </view>
+  </view>
+
+
+<template name="item">
+  <navigator url='{{url}}'>
+    <view class='myitem'>
+        <image src='{{icon}}'></image>
+        <text>{{itemname}}</text>
+        <image src='/images/right.png' class='right'></image>
+      </view>
+      <view class='line'></view>
+  </navigator>
+      
+</template>

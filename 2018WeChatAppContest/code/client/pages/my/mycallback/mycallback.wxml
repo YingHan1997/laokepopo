@@ -1,0 +1,17 @@
+<!--pages/my/mycallback/mycallback.wxml-->
+<view class='content'>
+  <view class='title'>
+  联系方式
+  </view>
+  <view class='mykey'>邮箱:</view>
+  <input placeholder='请输入你的邮箱' bindinput='getemail'></input>
+  <view class='mykey'>手机号:</view>
+  <input placeholder='请输入你的手机号' type='number' bindinput='getnumber'></input>
+  <view class='title'>
+  意见与反馈
+  </view>
+  <textarea placeholder='请输入你的意见' bindinput='getcontent'></textarea>
+
+</view>
+
+<button bindtap='sendmessage'>提交</button>

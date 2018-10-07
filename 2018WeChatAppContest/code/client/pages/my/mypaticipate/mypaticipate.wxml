@@ -1,0 +1,27 @@
+<!--pages/my/mypaticipate/mypaticipate.wxml-->
+<import src="../../template/template.wxml"/>
+
+<!-- 
+<template is="paticipate" wx:for="{{paticipate}}" wx:key="index" data="{{...paticipate[index]}}"/> -->
+  <block wx:for="{{topic}}" wx:key="index">
+  <view class='collection3'>
+
+  <view class='collection' bindtap='collectiondetail'>
+  <view class='collectionitem'>
+    <image src='{{item.image}}'></image>
+    <text class='myjoin'>{{item.topic_content}}</text>
+  </view>
+  </view>
+  <view class='box'>
+    <view class='middle'>
+      <text>{{item.content}}</text>
+    </view>
+    <view class='bottom'>
+      <image src='{{good}}'></image>
+    <text>{{item.good_point}}</text>
+    </view>
+    <view class='line'></view>
+    </view>
+
+  </view>
+  </block>

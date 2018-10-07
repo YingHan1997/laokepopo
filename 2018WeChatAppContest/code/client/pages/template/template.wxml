@@ -1,0 +1,170 @@
+<!--回答-->
+<template name="answers">
+<view class='box'>
+  <view class='top'>
+    <image src='{{img}}'></image>
+    <text>{{name}}</text>
+  </view>
+  <view class='middle'>
+    <text>{{answer}}</text>
+  </view>
+  <view class='bottom'>
+    <image src='{{keep}}' bindtap='changekeep'></image>
+    <image src='{{good}}'></image>
+   <text>{{number}}</text>
+  </view>
+  <view class='line'></view>
+</view>
+
+</template>
+
+<!--前三名-->
+<template name="rank">
+<view class='ranks'>
+  <view class='left'>
+    <image src='{{head}}' class='head'></image>
+    <image src='{{crown}}' class='crown'></image>
+  </view>
+  <view class='center'>
+    <view><text class='username'>{{username}}</text></view>
+    <view><text class='plus'>{{plus}}</text></view>
+  </view>
+  <view class='right' class="right {{pm ==1 ? 'red' : 'blue'}} {{pm==3?'pink':'none'}}">
+    <text>{{total}}</text>
+  </view>
+</view>
+
+</template>
+
+<!--我的排名-->
+<template name="myrank">
+  <view class='ranks2'>
+    <view class='mynumber'>
+      {{mynumber}}
+    </view>
+    <view class='left2'>
+    <image src='{{myhead}}' class='head'></image>
+    </view>
+    <view class='center'>
+      <view><text class='username'>{{myusername}}</text></view>
+      <view><text class='plus'>{{myplus}}</text></view>
+    </view>
+    <view class='right'>
+      <text class='total'>{{mytotal}}</text>
+    </view>
+  </view>
+</template>
+
+<template name="others">
+  <view class='ranks3'>
+    <view class='mynumber'>
+      {{mynumber}}
+    </view>
+    <view class='left2'>
+    
+    <image src='{{myhead}}' class='head'></image>
+    </view>
+    <view class='center'>
+      <view><text class='username'>{{myusername}}</text></view>
+      <view><text class='plus'>{{myplus}}</text></view>
+    </view>
+    <view class='right'>
+      <text class='total'>{{mytotal}}</text>
+    </view>
+  </view>
+</template>
+
+<!--话题池-->
+<template name="pond">
+<block wx:for="{{pond}}" wx:key="index">
+<view class='ponds'>
+    <view class='pond-top'>
+      <image src='{{item.image}}'></image>
+      <text>{{item.open_id}}</text>
+    </view>
+    <view class='pond-middle'>
+      <view class='pond-topic'>{{item.content}}</view>
+    </view>
+    <view class='pond-bottom'>
+      <text>{{item.create_time}}</text>
+      <view class='shares'>
+        <image src='{{pondshare}}'></image>
+        <image src='{{pondzan}}'></image>
+        <text>{{item.good_point}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='line2'></view>
+  </block> 
+
+</template>
+
+
+<!--我的消息-->
+<template name="mymessage">
+  <view class='system'>
+      <image src='{{system}}'></image>
+      <view class='mytext'>
+        <view class='messagetop'>
+          <text class='title'>{{title}}</text>
+          <text class='time'>{{time}}</text>
+        </view>
+        <view><text class='condition'>{{content}}</text></view>
+      </view>
+      
+    </view>
+    <view class='describe'>
+      <text class='username'>{{username}}</text>：
+      <text>{{describe}}</text>
+    </view>
+    
+    <view class='lineline'></view>
+</template>
+
+<!--我的收藏-->
+<template name="collection">
+<view class='collection'>
+  <view class='collectionitem'>
+    <image src='{{collectionimage}}'></image>
+    <text class='myjoin'>{{join}}</text>
+  </view>
+</view>
+   <view class='collectionline'></view>
+</template>
+
+<!--我的收藏没线的有日期的-->
+<template name="collection2">
+<text class='mydate'>{{mydate}}</text>
+<view class='collection2'>
+  <view class='collectionitem'>
+    <image src='{{collectionimage}}'></image>
+    <text class='myjoin'>{{join}}</text>
+  </view>
+</view>
+   
+</template>
+
+<!--我的参与-->
+<template name="paticipate">
+  <view class='collection3'>
+    <view class='collectionitem'>
+      <image src='{{collectionimage}}'></image>
+      <text class='myjoin'>{{join}}</text>
+    </view>
+  </view>
+  <view class='box'>
+    <view class='top'>
+      <image src='{{img}}'></image>
+      <text>{{name}}</text>
+    </view>
+    <view class='middle'>
+      <text>{{answer}}</text>
+    </view>
+    <view class='bottom'>
+      <image src='{{good}}'></image>
+    <text>{{number}}</text>
+    </view>
+    <view class='line'></view>
+  </view>
+
+</template>

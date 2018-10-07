@@ -1,0 +1,41 @@
+<!--pages/my/mymessage/mymessage.wxml-->
+<import src="../../template/template.wxml"/>
+
+
+<view class='message'>
+<navigator url='systemmessage/systemmessage'>
+  <view class='system'>
+    <image src='{{system}}'></image>
+    <view class='mytext'>
+      <view class='top'>
+        <text class='title'>{{title}}</text>
+        <text class='time'>{{time}}</text>
+      </view>
+      
+      <view><text class='content'>{{content}}</text></view>
+    </view>
+    
+  </view>
+  <view class='lineline'></view>
+</navigator>
+
+
+<block wx:for="{{mymessage}}" wx:key="index" wx:if="{{item.type==2||item.type==4||item.type==5}}">
+  <view class='system'>
+    <image src='{{system}}'></image>
+    <view class='mytext'>
+      <view class='top'>
+        <text class='title'>{{item.content}}</text>
+      <!--  <text class='time'>{{item.create_time}}</text>-->
+      </view>
+      <block wx:for="{{comment}}" wx:key="index">
+        <view><text class='content'>"{{item.content}}"</text></view>
+      </block>
+    </view>
+    
+  </view>
+  <view class='lineline'></view>
+
+</block>
+
+</view>

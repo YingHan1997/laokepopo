@@ -1,0 +1,12 @@
+{
+	"client": "./client",
+	"svr": "./server",
+	"miniprogramRoot": "./client",
+	"qcloudRoot": "./server",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wxbb4d1a0ff0d87b8e",
+	"projectname": "2018WeChatAppContest",
+	"condition": {}
+}

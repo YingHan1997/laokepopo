@@ -1,0 +1,19 @@
+<import src="../../template/template.wxml"/>
+
+<block wx:for="{{mytopic}}" wx:key="index">
+<view class='ponds'>
+    <view class='pond-middle' style='margin:10rpx'>
+      <view class='pond-topic'>{{item.content}}</view>
+      <image src='/images/acept.png' wx:if="{{item.type==1}}" class='accept'></image>
+    </view>
+    <view class='pond-bottom'style='margin:10rpx'>
+      <text>{{item.update_time}}</text>
+      <view class='shares'>
+        <image src='{{pondshare}}'></image>
+        <image src='{{pondzan}}'></image>
+        <text>{{item.good_point}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='line2'></view>
+  </block>

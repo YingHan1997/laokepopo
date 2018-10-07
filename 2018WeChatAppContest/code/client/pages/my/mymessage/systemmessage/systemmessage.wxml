@@ -1,0 +1,13 @@
+<!--pages/my/mymessage/systemmessage/systemmessage.wxml-->
+<block wx:for="{{mymessage}}" wx:key="index" wx:if="{{item.type==0||item.type==1||item.type==3}}">
+  <view class='system'>
+    <image src='{{system}}'></image>
+    <view class='text'>
+        <view class='title'>{{item.content}}</view>
+        <view class='mytime'>{{item.create_time}}</view>
+      </view>
+    
+  </view>
+  <view class='lineline'></view>
+
+</block>

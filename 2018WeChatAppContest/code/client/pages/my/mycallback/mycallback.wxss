@@ -1,0 +1,36 @@
+/* pages/my/mycallback/mycallback.wxss */
+input{
+  background: #eee;
+  padding: 5rpx 10rpx;
+  font-size: 30rpx;
+  height:80rpx;
+  border-radius: 10rpx;
+  margin: 10rpx 0;
+}
+.title{
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+.mykey{
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+textarea{
+  font-size: 30rpx;
+  background: #eee;
+  min-height: 100rpx;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  margin: 10rpx 0;
+}
+button{
+  width:400rpx;
+  margin-top: 30rpx;
+  font-size: 35rpx;
+}
+.content{
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}

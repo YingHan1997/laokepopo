@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/topic/topic",
+    "pages/pond/pond",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/my/mymessage/systemmessage/systemmessage",
+    "pages/template/template",
+    "pages/addCgi/addCgi",
+    "pages/my/mycollection/mycollection",
+    "pages/my/mypaticipate/mypaticipate",
+    "pages/my/mytopic/mytopic",
+    "pages/topic/addcomment/addcomment",
+    "pages/my/mymessage/mymessage",
+    
+    "pages/my/mycallback/mycallback"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8c8c8c",
+    "backgroundColor": "white",
+    "borderStyle": "black",
+    "selectedColor": "black",
+    "list": [
+      {
+        "pagePath": "pages/topic/topic",
+        "text": "话题",
+        "iconPath": "images/topic1.png",
+        "selectedIconPath": "images/topic2.png"
+      },
+      {
+        "pagePath": "pages/pond/pond",
+        "text": "话题池",
+        "iconPath": "images/pot1.png",
+        "selectedIconPath": "images/pot2.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my1.png",
+        "selectedIconPath": "images/my2.png"
+      }
+    ]
+  }
+}

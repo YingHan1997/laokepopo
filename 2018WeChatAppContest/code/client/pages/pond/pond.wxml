@@ -1,0 +1,24 @@
+<import src="../template/template.wxml"/>
+  <!--<template is="pond" wx:for="{{pond}}" wx:key="index" data="{{...pond[index]}}"/>-->
+
+ 
+<block wx:for="{{pond}}" wx:key="index">
+<view class='ponds'>
+    <view class='pond-top'>
+      <image src='{{image}}'></image>
+      <text>{{item.open_id}}</text>
+    </view>
+    <view class='pond-middle'>
+      <view class='pond-topic'>{{item.content}}</view>
+    </view>
+    <view class='pond-bottom'>
+      <text>{{item.create_time}}</text>
+      <view class='shares'>
+        <image src='{{pondshare}}'></image>
+        <image src='{{pondzan}}' bindtap='addGood'></image>
+        <text>{{item.good_point}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='line2'></view>
+  </block> 

@@ -1,0 +1,2 @@
+/* pages/my/mytopic/mytopic.wxss */
+@import "../../template/template.wxss";

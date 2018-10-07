@@ -1,0 +1,23 @@
+<!--pages/my/mycollection/mycollection.wxml-->
+<import src="../../template/template.wxml"/>
+
+<!-- <template is="collection" wx:for="{{collection}}"  wx:key="index"  data="{{...collection[index]}}"/> -->
+<block wx:for="{{collection}}" wx:key="index">
+<view class='collection' bindtap='collectiondetail'>
+  <view class='collectionitem'>
+    <image src='{{item.image}}'></image>
+    <text class='myjoin'>{{item.topic_content}}</text>
+  </view>
+</view>
+
+  <view class='box'>
+    <view class='top'>
+      <image src='{{img}}'></image>
+      <text>{{item.open_id}}</text>
+    </view>
+    <view class='middle'>
+      <text>{{item.content}}</text>
+    </view>
+  </view>
+   <view class='collectionline'></view>
+   </block>

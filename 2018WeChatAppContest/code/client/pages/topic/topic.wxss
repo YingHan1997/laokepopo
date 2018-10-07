@@ -1,0 +1,152 @@
+/* pages/topic/topic.wxss */
+@import "../template/template.wxss";
+.navbar {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+.navbar-item {
+    flex: 1.0;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: -1px;
+}
+.navbar-text {
+    display: block;
+    width: 45px;
+    padding: 10px;
+    margin: auto;
+}
+.navbar-text.active {
+    border-bottom: 2px solid #000;
+    color: #000;
+    font-weight: bold;
+}
+.navbar2 {
+    display: flex;
+    justify-content: center;
+}
+.navbar-item2 {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: -1px;
+}
+.navbar-text2 {
+    display: block;
+    padding: 10px;
+    margin: auto;
+}
+.navbar-text2.active {
+    color: red;
+    font-weight: bold;
+}
+.hidden {
+    display: none;
+}
+
+/*************************日话题**********************************/
+.topicbg{
+  width: 100%;
+  height: 300rpx;
+}
+.topic{
+  position: relative;
+  color: #06622f;
+}
+.topic2{
+  position: relative;
+  color: red;
+}
+.topicname{
+  position: absolute;
+  height: 10%;
+  top: 20%;
+  left: 15%;
+  letter-spacing: 8rpx;
+  font-weight: bold;
+}
+.name{
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  width: 80%;
+  letter-spacing: 5rpx;
+}
+.guide{
+  margin: 20rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.add{
+  width:45rpx;
+  height: 45rpx;
+  position: absolute;
+  right:0;
+}
+.date image{
+  width: 15rpx;
+  height: 15rpx;
+  margin: 0 5rpx;
+}
+.day{
+  font-size: 40rpx;
+  font-weight: bold;
+  margin: 0 10rpx;
+  }
+.month,.year{font-size: 30rpx}
+.rank image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 5rpx;
+}
+.rank{
+  font-size: 28rpx;
+  margin-right:20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #4290ce;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+ .me{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+} 
+.otherranks{
+  margin-bottom: 150rpx;
+}
+/*模态框*/
+ .choose{
+  width: 100%;
+  height: 100%;
+} 
+page{
+  height: 100%;
+  width: 100%;
+}
+.maskLayer{
+  width: 100%;
+  height: 10rpx;
+  border: 2rpx red solid;
+}
+
+/*历史记录*/
+.mymonth{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.leftline,.rightline{
+  width: 42%;
+  height: 2rpx;
+  background: #ddd;
+}
+.mymonth{
+  color: #ddd;
+  font-size: 25rpx;
+}

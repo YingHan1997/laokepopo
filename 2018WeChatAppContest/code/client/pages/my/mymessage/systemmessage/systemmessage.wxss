@@ -1,0 +1,10 @@
+/* pages/my/mymessage/systemmessage/systemmessage.wxss */
+@import "../../../template/template.wxss";
+.text{
+  padding: 10rpx 0;
+}
+.mytime{
+  font-size: 25rpx;
+  color: #ccc;
+  margin-top: 10rpx;
+}

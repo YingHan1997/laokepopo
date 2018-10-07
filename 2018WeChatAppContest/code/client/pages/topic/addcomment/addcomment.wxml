@@ -1,0 +1,21 @@
+<view class="add">
+  <textarea placeholder='参与话题...' bindinput='getcomment'></textarea>
+</view>
+
+<view class='pic' >
+<image wx:for="{{avatarUrl}}" wx:key="unique" src='{{item}}'></image>
+<image src='/images/takepic.png' bindtap='choosepic'></image>
+</view>
+
+
+<view class='send'>
+<image src='/images/send.png' bindtap='sendmessage'></image>
+</view>
+
+
+<view class='title'>{{mytitle}}</view>
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+<view class="btn-cancel" bindtap="takepic" data-status="cancel">拍照</view>
+<view class="btn-confirm" bindtap="choosepic" data-status="confirm">调用摄像头</view>
+</view>

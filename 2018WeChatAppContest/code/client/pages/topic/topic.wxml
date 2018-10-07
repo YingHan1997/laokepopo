@@ -1,0 +1,176 @@
+<import src="../template/template.wxml"/>
+
+<!--导航条-->  
+<view class="navbar" id='mjltest'>
+  <view class="navbar-item" wx:for="{{navbar}}"  wx:key="idx" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+    <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+  </view>
+</view>
+
+
+<!--历史记录TODO！！！！！-->
+<template name="history">
+  <view class='mymonth'>
+    <view class='leftline'></view>
+    <text>{{mymonth}}</text>
+    <view class='rightline'></view>
+  </view>
+  <text class='mydate'>{{mydate}}</text>
+  <template is="collection" wx:for="{{collection}}" wx:key="index" data="{{...collection[index]}}"/>   
+</template>
+
+<!--历史记录TODO！！！！！-->
+<template name="date">
+  <view class='mymonth'>
+    <view class='leftline'></view>
+    <text class='mymonth'>{{mymonth}}月</text>
+    <view class='rightline'></view>
+  </view>
+  
+</template>
+
+
+<!--历史记录-->
+<view class='choose' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+  <view class='guide' bindtap='hideModal'>
+    <view class='date'>
+      <text class='day'>{{day}}</text>
+      <text class='month'>{{month}}</text>.
+      <text class='year'>{{year}}</text>
+      <image src='{{trangle}}'></image>
+    </view>
+  </view>
+
+  <template is="date" wx:for="{{date}}" wx:key="index" data="{{...date[index]}}"/> 
+  <template is="collection2" wx:for="{{collection}}" wx:key="index" data="{{...collection[index]}}"/> 
+</view>
+
+
+<!-- 每日话题 -->
+<view class="hot-item-container {{currentNavbar==0 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;" >
+<view class='guide' >
+  <view class='date' bindtap='chooseSezi'>
+    <text class='day'>{{day}}</text>
+    <text class='month'>{{month}}</text>.
+    <text class='year'>{{year}}</text>
+    <image src='{{trangle}}'></image>
+  </view>
+  <navigator url='/pages/topic/addcomment/addcomment?title=day'>
+    <image src='/images/blackadd.png' class='add'></image>  
+    </navigator>
+</view>
+
+<block wx:for="{{daytopic}}" wx:key="index">
+  <view class='topic'>
+    <image src='{{item.image}}' class='topicbg'></image>
+    <view class='topicname'>今日话题</view>
+    <view class='name'>{{item.content}}</view>
+  </view>
+</block>
+  
+  <view wx:if="{{func==0}}" class='rank' bindtap='changemode' >
+    <image src='{{rank}}'></image>
+    <text>按热度</text>
+  </view>
+  <view wx:if="{{func==1}}" class='rank' bindtap='changemode'>
+    <image src='{{rank}}'></image>
+    <text>按最新</text>
+  </view>
+
+<!-- 内容 -->
+<block wx:for="{{daycomment}}" wx:key="index">
+  <view class='box'>
+  <view class='top'>
+    <image src='{{img}}'></image>
+    <text>{{item.open_id}}</text>
+  </view>
+  <view class='middle'>
+    <text>{{item.content}}</text>
+  </view>
+  <view class='bottom'>
+    <image src='{{keep}}' bindtap='changekeep'></image>
+    <image src='{{good}}'></image>
+   <text>{{item.good_point}}</text>
+  </view>
+  <view class='line'></view>
+</view>
+</block>
+
+</view>
+
+<!-- 每周话题 -->
+<view class="latest-item-container {{currentNavbar==1 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;">
+<view class='guide' >
+  <view class='date' bindtap='chooseSezi'>
+    <text class='day'>{{day}}</text>
+    <text class='month'>{{month}}</text>.
+    <text class='year'>{{year}}</text>
+    <image src='{{trangle}}'></image>
+  </view>
+  <navigator url='/pages/topic/addcomment/addcomment?title=week'>
+    <image src='/images/blackadd.png' class='add'></image>  
+    </navigator>
+</view>
+<block wx:for="{{weektopic}}" wx:key="index">
+  <view class='topic2'>
+    <image src='{{item.image}}' class='topicbg'></image>
+    <view class='topicname'>本周话题</view>
+    <view class='name'>{{item.content}}</view>
+  </view>
+</block>
+  <view wx:if="{{func==0}}" class='rank' bindtap='changemode2' >
+    <image src='{{rank}}'></image>
+    <text>按热度</text>
+  </view>
+  <view wx:if="{{func==1}}" class='rank' bindtap='changemode2'>
+    <image src='{{rank}}'></image>
+    <text>按最新</text>
+  </view>
+  
+<!-- 内容 -->
+<block wx:for="{{weekcomment}}" wx:key="index">
+  <view class='box'>
+  <view class='top'>
+    <image src='{{img}}'></image>
+    <text>{{item.open_id}}</text>
+  </view>
+  <view class='middle'>
+    <text>{{item.content}}</text>
+  </view>
+  <view class='bottom'>
+    <image src='{{keep}}' bindtap='changekeep'></image>
+    <image src='{{good}}'></image>
+   <text>{{item.good_point}}</text>
+  </view>
+  <view class='line'></view>
+</view>
+</block>
+</view>
+
+<!-- 排行榜 -->
+<view class="latest-item-container {{currentNavbar==2 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;">
+   <view class="navbar2">
+    <view class="navbar-item2" wx:for="{{navbar2}}"  wx:key="idx" wx:for-index="idx" data-idx="{{idx}}"   bindtap="swichNav2">
+      <text class="navbar-text2 {{currentNavbar2==idx ? 'active' : ''}}">{{item}}</text>
+    </view>
+  </view>
+  <!-- 全国榜 -->
+  <scroll-view class="{{currentNavbar2==0 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;"scroll-y="true">
+    <scroll-view>
+      <template is="rank" wx:for="{{myrank}}" wx:key="index" data="{{...myrank[index]}}" />
+      <view class='otherranks'>
+         <template is="others" wx:for="{{others}}" wx:key="index" data="{{...others[index]}}"/>
+      </view>  
+    </scroll-view>
+  </scroll-view>
+  <!-- 好友榜 -->
+    <scroll-view class="{{currentNavbar2==1 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;"scroll-y="true">
+<template is="rank" wx:for="{{myrank2}}" wx:key="index" data="{{...myrank2[index]}}" />
+      <view class='otherranks'>
+         <template is="others" wx:for="{{others2}}" wx:key="index" data="{{...others2[index]}}"/>
+      </view>  
+</scroll-view>
+<view class='me'>
+        <template is="myrank" data="{{...me}}"/>
+      </view>
+</view>
